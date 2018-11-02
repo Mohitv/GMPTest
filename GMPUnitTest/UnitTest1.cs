@@ -51,7 +51,7 @@ namespace SeleniumBingTests
         {
             appURL = "https://devopswebapp27.azurewebsites.net/";
 
-            string browser = "IE";
+            string browser = "Chrome";
             switch (browser)
             {
                 case "Chrome":
