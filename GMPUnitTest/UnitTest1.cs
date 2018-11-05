@@ -24,10 +24,19 @@ namespace SeleniumBingTests
 
         [TestMethod]
         [TestCategory("Chrome")]
-        public void TheBingSearchTest()
+        public void VerifyGMPPageTitle()
         {
             driver.Navigate().GoToUrl(appURL + "/");
             Assert.IsTrue(driver.Title.Contains("Get My Parking"), "Verified title of the page");
+        }
+
+
+        [TestMethod]
+        [TestCategory("Chrome")]
+        public void VerifyGMPHomePageHeader()
+        {
+            driver.Navigate().GoToUrl(appURL + "/");
+            Assert.IsTrue(driver.FindElement(By.CssSelector(".navbar-header>a")).Text.Contains("Get My Parking"), "Header contains correct text");
         }
 
         /// <summary>
@@ -49,7 +58,7 @@ namespace SeleniumBingTests
         [TestInitialize()]
         public void SetupTest()
         {
-            appURL = "https://devopswebapp27.azurewebsites.net/";
+            appURL = "https://devopswebapp27.azurewebsites.net";
 
             string browser = "IE";
             switch (browser)
